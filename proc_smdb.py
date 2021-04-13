@@ -13,7 +13,7 @@ def find_key(key, targ=None):
     if isinstance(targ, dict):
         for k, v in targ.items():
             if k == key:
-                yield [[k], v]
+                yield [k], v
             for path, vn in find_key(key, v):
                 yield [[k, *path], vn]
     if isinstance(targ, list):
